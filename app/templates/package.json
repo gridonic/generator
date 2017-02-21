@@ -1,0 +1,8 @@
+{
+  "name": "<%= project %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "scripts": {},
+  "author": "Gridonic <hello@gridonic.ch>",
+  "license": "MIT"
+}
