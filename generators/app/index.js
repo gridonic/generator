@@ -1,5 +1,6 @@
 const Generator = require('yeoman-generator');
 const Chalk = require('chalk');
+const File = require('fs');
 const Path = require('path');
 const Platform = require('../common/platform');
 const Yosay = require('yosay');
