@@ -6,7 +6,7 @@
 
 ## Installation
 
-There is usually no need to install our generator separately as it comes with out [@gridonic/cli].
+There is usually **no need** to install our generator *separately* as it comes with our [@gridonic/cli] out of the box.
 
 #  
 <p align="center">
