@@ -1,8 +1,8 @@
-<p align="center"><img src="https://raw.githubusercontent.com/yeoman/media/master/optimized/yeoman-horizontal.png" width="66%" alt="Yeoman"></p>
-
-# Gridonic generator
-
-This is our opinionated [Yeoman] generator.
+<p align="center">
+    <img src="https://raw.githubusercontent.com/yeoman/media/master/optimized/yeoman-horizontal.png" width="420" alt="Yeoman"><br><br>
+    Our <strong>opinionated</strong> <a href="https://yeoman.io/">Yeoman</a> generator.
+</p>
+<br>
 
 #  
 <p align="center">
@@ -10,5 +10,3 @@ This is our opinionated [Yeoman] generator.
   <a href="https://gridonic.github.io">gridonic.github.io</a> ・
   <a href="https://twitter.com/gridonic">@gridonic</a>
 </p>
-
-[Yeoman]: http://yeoman.io/
