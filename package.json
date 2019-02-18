@@ -1,0 +1,27 @@
+{
+  "name": "@gridonic/generator",
+  "version": "0.1.0",
+  "description": "Our yeoman generator.",
+  "main": "src/index.js",
+  "keywords": [
+    "yeoman",
+    "generator"
+  ],
+  "dependencies": {
+    "@gridonic/log": "^1.0.0",
+    "yeoman-environment": "^2.3.4",
+    "yeoman-generator": "^3.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gridonic/generator.git"
+  },
+  "author": "Gridonic <hello@gridonic.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gridonic/generator/issues"
+  },
+  "homepage": "https://github.com/gridonic/generator#readme"
+}
