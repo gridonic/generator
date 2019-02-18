@@ -17,7 +17,7 @@ const fn = (args = [], flags = {}) => {
     const [name] = args;
 
     env.register(pathToGenerator, 'generator:app');
-    env.run(`generator:app ${name}`);
+    env.run(`generator:app ${name}`, flags);
 };
 
 module.exports = {
