@@ -1,15 +1,10 @@
-const {
-    development,
-    production
-} = require('@gridonic/webpack');
+const { extendConfig } = require('@gridonic/webpack');
 
-module.exports = (env) => {
-    const config = env === 'production' ? production : development;
-
-    return config({
+module.exports = extendConfig
+    .usePreset('vue')
+    .forAll({
         html: {
-            template: './src/html/index.ejs',
-        },
-        presets: ['vue']
-    });
-};
+            template: './src/index.ejs'
+        }
+    })
+    .toConfig;

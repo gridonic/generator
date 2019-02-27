@@ -6,7 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <br>
 
+## [0.1.1]
+###### 2019-02-27
+
+###### Fixed
+
+- Vue: Adjust files to comply with [@gridonic/webpack@0.4.0](https://github.com/gridonic/webpack/blob/0.4.0/CHANGELOG.md)
+
 ## 0.1.0
 ###### 2019-02-18
 
 First version ready for internal testing.
+
+[unreleased]: https://github.com/gridonic/generator/compare/0.1.1...HEAD
+[0.1.1]: https://github.com/gridonic/generator/compare/0.1.0...0.1.1
