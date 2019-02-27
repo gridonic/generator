@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <br>
 
+## [0.1.2]
+###### 2019-02-27
+
+###### Fixed
+
+- Vue: Fixed incorrect htmlWebpackPlugin template path in `webpack.config.js`
+
 ## [0.1.1]
 ###### 2019-02-27
 
@@ -18,5 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 First version ready for internal testing.
 
-[unreleased]: https://github.com/gridonic/generator/compare/0.1.1...HEAD
+[unreleased]: https://github.com/gridonic/generator/compare/0.1.2...HEAD
+[0.1.2]: https://github.com/gridonic/generator/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/gridonic/generator/compare/0.1.0...0.1.1

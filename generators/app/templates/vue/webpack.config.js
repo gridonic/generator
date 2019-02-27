@@ -4,7 +4,7 @@ module.exports = extendConfig
     .usePreset('vue')
     .forAll({
         html: {
-            template: './src/index.ejs'
+            template: './src/html/index.ejs'
         }
     })
     .toConfig;
