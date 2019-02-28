@@ -1,6 +1,6 @@
 {
   "name": "@gridonic/generator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Our yeoman generator.",
   "main": "src/index.js",
   "keywords": [
