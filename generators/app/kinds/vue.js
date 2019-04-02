@@ -5,6 +5,7 @@ module.exports = {
         '.browserslistrc',
         '.editorconfig',
         '.eslintrc.js',
+        '.gitignore',
         '.node-version',
         'babel.config.js',
         'package.json',
