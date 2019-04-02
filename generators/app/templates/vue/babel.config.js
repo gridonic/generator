@@ -14,7 +14,10 @@ module.exports = {
             exclude: [
                 'transform-regenerator',
                 'transform-async-to-generator'
-            ]
+            ],
+
+            // @see https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md#usebuiltins-usage-with-corejs-3
+            corejs: 3
         }]
     ],
     plugins: [
