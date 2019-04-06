@@ -23,7 +23,7 @@ module.exports = {
         '@gridonic/webpack',
         'autoprefixer',
         'babel-eslint',
-        'core-js',
+        'core-js@3',
         'cssnano',
         'eslint',
         'eslint-config-airbnb-base',
