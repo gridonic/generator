@@ -10,6 +10,16 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [1.0.0]
+###### 2019-04-06
+
+###### Changed
+
+- Vue: Add `.gitignore`
+- Vue: Add mandatory `corejs` option to `babel.config.js`
+- Vue: Add default npm scripts
+- Vue: `core-js` version should match babel config
+
 
 ## [0.1.3]
 ###### 2019-02-28
@@ -41,7 +51,8 @@ Looking for [unreleased] changes?
 
 First version ready for internal testing.
 
-[unreleased]: https://github.com/gridonic/generator/compare/0.1.3...HEAD
+[unreleased]: https://github.com/gridonic/generator/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/gridonic/generator/compare/0.1.3...1.0.0
 [0.1.3]: https://github.com/gridonic/generator/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/gridonic/generator/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/gridonic/generator/compare/0.1.0...0.1.1
