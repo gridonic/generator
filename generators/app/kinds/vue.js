@@ -15,10 +15,14 @@ module.exports = {
         'src/index.js',
         'webpack.config.js',
     ],
-    dependencies: [],
+    dependencies: [
+        '@babel/runtime',
+    ],
     devDependencies: [
         '@babel/core',
         '@babel/plugin-syntax-dynamic-import',
+        '@babel/plugin-transform-async-to-generator',
+        '@babel/plugin-transform-runtime',
         '@babel/preset-env',
         '@gridonic/webpack',
         'autoprefixer',
