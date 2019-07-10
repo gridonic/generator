@@ -38,5 +38,6 @@ module.exports = {
         'nodent-runtime@^3.2.1',
         'postcss-lh@^2.0.2',
         'postcss-replace@^1.0.6',
+        'stylelint@^10',
     ]
 };
