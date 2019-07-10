@@ -10,6 +10,20 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [1.0.1]
+###### 2019-07-10
+
+###### Added
+
+- Stylelint since our webpack might use it
+
+###### Changed
+
+- Vue: Remove obsolete webpack options
+- Babel: Improve async/await and potential codesize
+- Hardcode versions to avoid unintended conflicts
+
+
 ## [1.0.0]
 ###### 2019-04-06
 
@@ -51,7 +65,8 @@ Looking for [unreleased] changes?
 
 First version ready for internal testing.
 
-[unreleased]: https://github.com/gridonic/generator/compare/1.0.0...HEAD
+[unreleased]: https://github.com/gridonic/generator/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/gridonic/generator/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/gridonic/generator/compare/0.1.3...1.0.0
 [0.1.3]: https://github.com/gridonic/generator/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/gridonic/generator/compare/0.1.1...0.1.2
