@@ -7,6 +7,7 @@ module.exports = {
         '.eslintrc.js',
         '.gitignore',
         '.node-version',
+        '.stylelintrc',
         'babel.config.js',
         'package.json',
         'postcss.config.js',
@@ -39,5 +40,10 @@ module.exports = {
         'postcss-lh@^2.0.2',
         'postcss-replace@^1.0.6',
         'stylelint@^10',
+        'stylelint-config-rational-order@^0.1.2',
+        'stylelint-config-standard@^18.3.0',
+        'stylelint-order@^3.0.1',
+        'stylelint-rscss@^0.4.0',
+        'stylelint-scss@^3.9.',
     ]
 };
