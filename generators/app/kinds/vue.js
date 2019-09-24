@@ -44,6 +44,6 @@ module.exports = {
         'stylelint-config-standard@^18.3.0',
         'stylelint-order@^3.0.1',
         'stylelint-rscss@^0.4.0',
-        'stylelint-scss@^3.9.',
+        'stylelint-scss@^3.11.1',
     ]
 };
