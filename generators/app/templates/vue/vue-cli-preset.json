@@ -1,0 +1,22 @@
+{
+  "useConfigFiles": true,
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-typescript": {
+      "classComponent": true,
+      "tsLint": true,
+      "lintOn": [
+        "save",
+        "commit"
+      ],
+      "useTsWithBabel": true
+    },
+    "@vue/cli-plugin-pwa": {},
+    "@vue/cli-plugin-unit-jest": {},
+    "@vue/cli-plugin-e2e-cypress": {}
+  },
+  "router": true,
+  "routerHistoryMode": false,
+  "vuex": true,
+  "cssPreprocessor": "dart-sass"
+}

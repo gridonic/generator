@@ -32,7 +32,8 @@ module.exports = class extends Generator {
     }
 
     async writing() {
-        const { value, files } = kinds.find(kind => kind.value === this.answers.targetKind);
+        const { value, files } =
+            kinds.find(kind => kind.value === this.answers.targetKind);
 
         if (Array.isArray(files) === false || files.length < 1) {
             return;
@@ -62,8 +63,13 @@ module.exports = class extends Generator {
         });
     }
 
-    install() {
-        const { devDependencies, dependencies } = kinds.find(kind => kind.value === this.answers.targetKind);
+    async install() {
+        const { devDependencies, dependencies, onInstall } =
+            kinds.find(kind => kind.value === this.answers.targetKind);
+
+        if (onInstall) {
+            await onInstall(this.options);
+        }
 
         Object.entries({ devDependencies, dependencies }).forEach(
             ([key, value]) => {
