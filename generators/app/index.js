@@ -31,7 +31,7 @@ module.exports = class extends Generator {
         }]);
     }
 
-    writing() {
+    async writing() {
         const { value, files } = kinds.find(kind => kind.value === this.answers.targetKind);
 
         if (Array.isArray(files) === false || files.length < 1) {
