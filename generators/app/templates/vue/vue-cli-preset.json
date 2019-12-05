@@ -4,19 +4,21 @@
     "@vue/cli-plugin-babel": {},
     "@vue/cli-plugin-typescript": {
       "classComponent": true,
-      "tsLint": true,
-      "lintOn": [
-        "save",
-        "commit"
-      ],
       "useTsWithBabel": true
     },
     "@vue/cli-plugin-pwa": {},
+    "@vue/cli-plugin-router": {
+      "historyMode": false
+    },
+    "@vue/cli-plugin-vuex": {},
+    "@vue/cli-plugin-eslint": {
+      "config": "airbnb",
+      "lintOn": [
+        "save"
+      ]
+    },
     "@vue/cli-plugin-unit-jest": {},
     "@vue/cli-plugin-e2e-cypress": {}
   },
-  "router": true,
-  "routerHistoryMode": false,
-  "vuex": true,
   "cssPreprocessor": "dart-sass"
 }
