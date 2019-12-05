@@ -68,7 +68,7 @@ module.exports = class extends Generator {
             kinds.find(kind => kind.value === this.answers.targetKind);
 
         if (onInstall) {
-            await onInstall(this.options);
+            await onInstall(this);
         }
 
         Object.entries({ devDependencies, dependencies }).forEach(
