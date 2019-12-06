@@ -76,8 +76,10 @@ describe('Verify the projects configuration', () => {
         expect(['OFF', 'TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR'])
           .toContainEqual(ctx.envProd.VUE_APP_LOG_LEVEL);
 
-        expect(['OFF', 'TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR'])
-          .toContainEqual(ctx.envLocal.VUE_APP_LOG_LEVEL);
+        if (ctx.envLocal.VUE_APP_LOG_LEVEL) {
+          expect(['OFF', 'TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR'])
+            .toContainEqual(ctx.envLocal.VUE_APP_LOG_LEVEL);
+        }
       });
 
       test('log level should not be less than WARN in .env.prod', () => {

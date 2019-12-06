@@ -1,11 +1,11 @@
 /**
  * The current default gridonic setup for vue projects
  *
- * NOTES
+ * # NOTES
  * Changes to standard template:
  *
- * DONE
- * # Config files
+ * # DONE
+ * ## Config files
  * - .editorconfig: add typescript specific stuff and settings we use in most projects
  * - .eslintrc.js: class-methods-use-this -> OFF
  * - .gitignore: .idea from https://www.gitignore.io/api/phpstorm
@@ -16,15 +16,18 @@
  *      - add githooks and lint-staged
  * - vue.config.js: add with https configuration
  *
- * # Env
+ * ## src
+ * - Remove or replace views, components and test of standard template
+ *
+ * ## Env
  * - Add .env, .env.stage, .env.prod by default
  *
- * # Tests
- *
+ * ## Tests
  * - Add tests for verifying project setup
  *
- * TODO
- * - Remove or replace views, components and test of standard template
+ *
+ * # TODO
+ *
  * - Add default gitlab.ci
  * - Show message at the end to run `npm run test:unit` to check the configuration
  *
@@ -60,7 +63,7 @@ module.exports = {
         'package.json',
         'README.md',
         'tsconfig.json',
-        'vue.config.json',
+        'vue.config.js',
 
         // Folders
         'src',
