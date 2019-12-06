@@ -1,9 +1,47 @@
+/**
+ * The current default gridonic setup for vue projects
+ *
+ * NOTES
+ * Changes to standard template:
+ *
+ * DONE
+ * # Config files
+ * - .editorconfig: add typescript specific stuff and settings we use in most projects
+ * - .eslintrc.js: class-methods-use-this -> OFF
+ * - .gitignore: .idea from https://www.gitignore.io/api/phpstorm
+ * - .node-version: add
+ * - .stylelintrc: add from a recent project
+ * - package.json: remove all dependencies, replace name by <%= project %>
+ *
+ * # Env
+ * - Add .env, .env.stage, .env.prod by default
+ *
+ * TODO
+ * - Remove or replace views, components and test of standard template
+ * - Add configuration tests
+ * - Add default gitlab.ci
+ *
+ */
 module.exports = {
     name: 'Vue.js Gridonic - Opinionated template for Gridonic Projects using vue-cli 4',
     value: 'vue',
+    variables: {
+        sentryDsn: ''
+    },
+    // TODO: retrieved answer gets not written into .env.prod / .env.stage, why?
+    // async onPrompting(generator) {
+    //     return generator.prompt([{
+    //         type: 'string',
+    //         name: 'sentryDsn',
+    //         message: 'Enter the sentry DSN for this project, if you already know it:',
+    //     }]);
+    // },
     files: [
         '.browserslistrc',
         '.editorconfig',
+        '.env',
+        '.env.prod',
+        '.env.stage',
         '.eslintrc.js',
         '.gitignore',
         '.node-version',

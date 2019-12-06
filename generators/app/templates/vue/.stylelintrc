@@ -8,8 +8,6 @@
     "stylelint-config-standard",
     "stylelint-rscss/config"
   ],
-  "fix": true,
-  "syntax": "scss",
   "rules": {
     "declaration-empty-line-before": null,
     "at-rule-no-unknown": [true, {

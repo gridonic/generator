@@ -29,11 +29,20 @@ module.exports = class extends Generator {
             message: 'What kind of project is it?',
             choices: kinds.map(({name, value}) => ({name, value}))
         }]);
+
+        const { onPrompting } = this.currentKind;
+
+        if (onPrompting) {
+            this.answers = Object.assign(
+                {},
+                this.answers,
+                await onPrompting(this)
+            );
+        }
     }
 
     async writing() {
-        const {value, files, variables} =
-            kinds.find(kind => kind.value === this.answers.targetKind);
+        const {value, files, variables} = this.currentKind;
 
         if (Array.isArray(files) === false || files.length < 1) {
             return;
@@ -41,15 +50,16 @@ module.exports = class extends Generator {
 
         info('Copying boilerplate files…', 1, 1);
 
+        const data = Object.assign({},
+            variables || {},
+            this.answers,
+            {
+                project: this.options.appname
+            });
+
         files.forEach((file) => {
             let source;
             let destination;
-
-            const data = Object.assign({},
-                variables || {},
-                {
-                    project: this.options.appname
-                });
 
             if (Array.isArray(file)) {
                 [source, destination] = file;
@@ -66,8 +76,7 @@ module.exports = class extends Generator {
     }
 
     async install() {
-        const {devDependencies, dependencies, onInstall} =
-            kinds.find(kind => kind.value === this.answers.targetKind);
+        const {devDependencies, dependencies, onInstall} = this.currentKind;
 
         if (onInstall) {
             await onInstall(this);
@@ -91,5 +100,13 @@ module.exports = class extends Generator {
 
     end() {
         success('Done. Happy coding! ✌️', 1, 1);
+    }
+
+    get currentKind() {
+        if (!this.answers) {
+            return null;
+        }
+
+        return kinds.find(kind => kind.value === this.answers.targetKind);
     }
 };
