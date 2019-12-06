@@ -1,0 +1,25 @@
+{
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order",
+    "stylelint-config-rational-order/plugin"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-rscss/config"
+  ],
+  "fix": true,
+  "syntax": "scss",
+  "rules": {
+    "declaration-empty-line-before": null,
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["function", "if", "else", "each", "include", "mixin", "extend"]
+    }],
+    "unit-no-unknown": [true, { "ignoreUnits": ["/lh/", "string"] }],
+    "order/properties-order": [],
+    "plugin/rational-order": [true, {
+      "border-in-box-model": false,
+      "empty-line-between-groups": true
+    }]
+  }
+}

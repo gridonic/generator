@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'Vue.js Gridonic - Opinionated template for Gridonic Projects using vue-cli 4',
-    value: 'vue',
+    name: 'Vue.js Basic - Standard vue-cli 4 template',
+    value: 'vue-basic',
     files: [
         '.browserslistrc',
         '.editorconfig',

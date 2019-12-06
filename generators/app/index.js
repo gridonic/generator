@@ -4,7 +4,7 @@ const path = require('path');
 const Generator = require('yeoman-generator');
 
 // @see https://github.com/gridonic/log
-const { info, success } = require('@gridonic/log');
+const {info, success} = require('@gridonic/log');
 
 // Import supported kind of projects
 const kinds = require('./kinds');
@@ -27,12 +27,12 @@ module.exports = class extends Generator {
             type: 'list',
             name: 'targetKind',
             message: 'What kind of project is it?',
-            choices: kinds.map(({ name, value }) => ({ name, value }))
+            choices: kinds.map(({name, value}) => ({name, value}))
         }]);
     }
 
     async writing() {
-        const { value, files } =
+        const {value, files, variables} =
             kinds.find(kind => kind.value === this.answers.targetKind);
 
         if (Array.isArray(files) === false || files.length < 1) {
@@ -45,9 +45,11 @@ module.exports = class extends Generator {
             let source;
             let destination;
 
-            const data = {
-                project: this.options.appname
-            };
+            const data = Object.assign({},
+                variables || {},
+                {
+                    project: this.options.appname
+                });
 
             if (Array.isArray(file)) {
                 [source, destination] = file;
@@ -64,14 +66,14 @@ module.exports = class extends Generator {
     }
 
     async install() {
-        const { devDependencies, dependencies, onInstall } =
+        const {devDependencies, dependencies, onInstall} =
             kinds.find(kind => kind.value === this.answers.targetKind);
 
         if (onInstall) {
             await onInstall(this);
         }
 
-        Object.entries({ devDependencies, dependencies }).forEach(
+        Object.entries({devDependencies, dependencies}).forEach(
             ([key, value]) => {
                 if (Array.isArray(value) === false || value.length < 1) {
                     return;
