@@ -11,15 +11,22 @@
  * - .gitignore: .idea from https://www.gitignore.io/api/phpstorm
  * - .node-version: add
  * - .stylelintrc: add from a recent project
- * - package.json: remove all dependencies, replace name by <%= project %>
+ * - package.json:
+ *      - remove all dependencies, replace name by <%= project %>
+ *      - add githooks and lint-staged
+ * - vue.config.js: add with https configuration
  *
  * # Env
  * - Add .env, .env.stage, .env.prod by default
  *
+ * # Tests
+ *
+ * - Add tests for verifying project setup
+ *
  * TODO
  * - Remove or replace views, components and test of standard template
- * - Add configuration tests
  * - Add default gitlab.ci
+ * - Show message at the end to run `npm run test:unit` to check the configuration
  *
  */
 module.exports = {
@@ -37,6 +44,7 @@ module.exports = {
     //     }]);
     // },
     files: [
+        // Config files
         '.browserslistrc',
         '.editorconfig',
         '.env',
@@ -52,6 +60,9 @@ module.exports = {
         'package.json',
         'README.md',
         'tsconfig.json',
+        'vue.config.json',
+
+        // Folders
         'src',
         'tests',
         'public'
@@ -69,6 +80,12 @@ module.exports = {
     devDependencies: [
         // Vue-Cli Version for this template
         '@vue/cli@^4.1.1',
+
+        // Dot-Env, for configuration testing purposes
+        'dotenv@^8.2.0',
+
+        // Lint-staged, for gitHooks
+        'lint-staged@^9.5.0',
 
         // Depenencies from Vue-Cli
         '@types/jest@^24.0.19',
