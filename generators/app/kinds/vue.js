@@ -90,6 +90,13 @@ module.exports = {
         // Lint-staged, for gitHooks
         'lint-staged@^9.5.0',
 
+        // Integrate style linting
+        'stylelint@^11.1.1',
+        'stylelint-config-rational-order@^0.1.2',
+        'stylelint-config-standard@^19.0.0',
+        'stylelint-order@^3.1.1',
+        'stylelint-scss@^3.13.0',
+
         // Depenencies from Vue-Cli
         '@types/jest@^24.0.19',
         '@vue/cli-plugin-babel@^4.1.0',
@@ -109,6 +116,6 @@ module.exports = {
         'sass@^1.23.7',
         'sass-loader@^8.0.0',
         'typescript@~3.5.3',
-        'vue-template-compiler@^2.6.10'
-    ]
+        'vue-template-compiler@^2.6.10',
+]
 };

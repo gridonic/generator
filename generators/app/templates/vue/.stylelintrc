@@ -5,8 +5,7 @@
     "stylelint-config-rational-order/plugin"
   ],
   "extends": [
-    "stylelint-config-standard",
-    "stylelint-rscss/config"
+    "stylelint-config-standard"
   ],
   "rules": {
     "declaration-empty-line-before": null,
