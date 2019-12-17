@@ -1,6 +1,9 @@
 import dotenv, { DotenvParseOutput } from 'dotenv';
 import fs from 'fs';
 
+// @ts-ignore
+import webpackConfig from '@vue/cli-service/webpack.config';
+
 class TestContext {
   public env!: DotenvParseOutput;
   public envStage!: DotenvParseOutput;
@@ -25,6 +28,17 @@ const ctx = new TestContext();
 ctx.loadEnvFiles();
 
 describe('Verify the projects configuration', () => {
+  describe('Webpack configuration', () => {
+    test('webpack generates env variable containing the app version', () => {
+      // console.log(webpackConfig.plugins[1]);
+      const definePlugin = webpackConfig.plugins
+        .find((p: any) => p.constructor.name === 'DefinePlugin');
+
+      expect(definePlugin.definitions['process.env'].VUE_APP_VERSION)
+        .not.toBeFalsy();
+    });
+  });
+
   describe('.env files and variables', () => {
     describe('Environment', () => {
       test('environment should be "dev" in default .env', () => {
@@ -83,7 +97,7 @@ describe('Verify the projects configuration', () => {
       });
 
       test('log level should not be less than WARN in .env.prod', () => {
-        expect(['WARN', 'ERROR', 'OFF'])
+        expect(['INFO', 'WARN', 'ERROR', 'OFF'])
           .toContainEqual(ctx.envProd.VUE_APP_LOG_LEVEL);
       });
     });

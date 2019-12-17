@@ -18,6 +18,8 @@
  *
  * ## src
  * - Remove or replace views, components and test of standard template
+ * - Refactor Store to use classes
+ * - Refactor Router to use classes
  *
  * ## Env
  * - Add .env, .env.stage, .env.prod by default
@@ -71,7 +73,10 @@ module.exports = {
         'public'
     ],
     dependencies: [
-        // Depenencies from Vue-Cli
+        // Gridonic Client Services
+        "@gridonic/client-services^0.1.0",
+
+        // Dependencies from Vue-Cli
         'core-js@^3.4.3',
         'register-service-worker@^1.6.2',
         'vue@^2.6.10',
@@ -97,7 +102,7 @@ module.exports = {
         'stylelint-order@^3.1.1',
         'stylelint-scss@^3.13.0',
 
-        // Depenencies from Vue-Cli
+        // Dependencies from Vue-Cli
         '@types/jest@^24.0.19',
         '@vue/cli-plugin-babel@^4.1.0',
         '@vue/cli-plugin-e2e-cypress@^4.1.0',
