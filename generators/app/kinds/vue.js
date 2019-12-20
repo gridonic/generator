@@ -74,7 +74,10 @@ module.exports = {
     ],
     dependencies: [
         // Gridonic Client Services
-        "@gridonic/client-services^0.1.0",
+        "@gridonic/client-services@^0.1.1",
+
+        // Vuex class decorators
+        'vuex-class@^0.3.2',
 
         // Dependencies from Vue-Cli
         'core-js@^3.4.3',

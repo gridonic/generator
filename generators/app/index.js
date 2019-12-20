@@ -90,6 +90,7 @@ module.exports = class extends Generator {
 
                 info(`Installing ${key}…`, 1, 1);
 
+                console.log(key);
                 this.npmInstall(value, {
                     prefix: this.appPath,
                     saveDev: key === 'devDependencies'

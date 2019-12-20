@@ -6,41 +6,42 @@ import {
   StoreRoot,
 } from '@/main/lib/store';
 
-import { AppState, RootState } from '@/store/store-state';
+import { AppState, RootState } from '@/store/store';
 
-import AppStoreModule from '@/store/AppStoreModule';
 import AppInfo from '@/main/AppInfo';
 
 export default class RootStore implements StoreRoot<RootState> {
   private readonly appInfo: AppInfo;
 
-  constructor({ appInfo }: { appInfo: AppInfo }) {
+  private readonly storeModules: StoreModuleTree<RootState>;
+
+  constructor({ appInfo, storeModules }
+  : { appInfo: AppInfo, storeModules: StoreModuleTree<RootState> }) {
     this.appInfo = appInfo;
+    this.storeModules = storeModules;
   }
 
-  get modules(): StoreModuleTree<RootState> {
-    return {
-      app: new AppStoreModule(),
-    };
+  public get modules(): StoreModuleTree<RootState> {
+    return this.storeModules;
   }
 
-  get state(): RootState {
+  public get state(): RootState {
     return {
       appInfo: this.appInfo,
     };
   }
 
-  get getters(): StoreGetterTree<AppState, RootState> {
+  public get getters(): StoreGetterTree<AppState, RootState> {
     return {
     };
   }
 
-  get actions(): StoreActionTree<AppState, RootState> {
+  public get actions(): StoreActionTree<AppState, RootState> {
     return {
     };
   }
 
-  get mutations(): StoreMutationTree<AppState> {
+  public get mutations(): StoreMutationTree<AppState> {
     return {
     };
   }

@@ -1,4 +1,9 @@
+const pkg = require('./package');
+
+process.env.VUE_APP_VERSION = pkg.version;
+
 module.exports = {
+  lintOnSave: true,
   devServer: {
     host: 'localhost',
     https: {

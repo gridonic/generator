@@ -11,14 +11,18 @@ import {
   GetterTree as StoreGetterTree,
   ActionTree as StoreActionTree,
   MutationTree as StoreMutationTree,
+  Store,
+  Commit,
 }
   from 'vuex';
 
 export {
+  Store,
   StoreRoot,
   StoreModule,
   StoreModuleTree,
   StoreGetterTree,
   StoreMutationTree,
   StoreActionTree,
+  Commit,
 };

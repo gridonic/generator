@@ -7,9 +7,8 @@ import Vuex from 'vuex';
 import App from './App.vue';
 
 import AppContainer from '@/main/AppContainer';
-import RootStore from '@/store/RootStore';
 import AppInfo from '@/main/AppInfo';
-import AppRouter from '@/router/AppRouter';
+import { log } from '@/main/lib/logger';
 
 export default class AppMain {
   private container!: AppContainer;
@@ -49,19 +48,17 @@ export default class AppMain {
   private createRouter() {
     Vue.use(VueRouter);
 
-    return new VueRouter(new AppRouter());
+    return this.container.router;
   }
 
   private createStore() {
     Vue.use(Vuex);
 
-    return new Vuex.Store(new RootStore({
-      appInfo: this.appInfo,
-    }));
+    return this.container.store;
   }
 
   private logAppStartupInfo() {
-    this.container.log.channel.app.info(
+    log.app.info(
       'Initialized', {
         environment: this.appInfo.appEnvironment,
         version: this.appInfo.appVersion,

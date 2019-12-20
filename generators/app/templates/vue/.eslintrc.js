@@ -14,9 +14,9 @@ module.exports = {
     'class-methods-use-this': 'off',
     'lines-between-class-members': 'off',
     'vue/script-indent': ['error', 2, {
-      'baseIndent': 1,
-      'ignores': []
-    }]
+      baseIndent: 1,
+      ignores: [],
+    }],
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
@@ -32,10 +32,10 @@ module.exports = {
       },
     },
     {
-      'files': ['*.vue'],
-      'rules': {
-        'indent': "off"
-      }
-    }
+      files: ['*.vue'],
+      rules: {
+        indent: 'off',
+      },
+    },
   ],
 };
