@@ -29,6 +29,8 @@ export default class AppContainer implements Container {
       logger, {
         id: this.appInfo.sentryDsn,
         environment: this.appInfo.appEnvironment,
+        projectName: this.appInfo.projectName,
+        version: this.appInfo.appVersion,
         vue: Vue,
       },
     );

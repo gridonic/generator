@@ -17,6 +17,14 @@ class TestContext {
     this.envLocal = this.loadEnvFile('.env.local').parsed || {};
   }
 
+  public expectDefinePluginVariableToExist(name: string) {
+    const definePlugin = webpackConfig.plugins
+      .find((p: any) => p.constructor.name === 'DefinePlugin');
+
+    expect(definePlugin.definitions['process.env'][name])
+      .not.toBeFalsy();
+  }
+
   private loadEnvFile(name: string) {
     return dotenv.config({
       path: `${__dirname}/../../../${name}`,
@@ -30,12 +38,11 @@ ctx.loadEnvFiles();
 describe('Verify the projects configuration', () => {
   describe('Webpack configuration', () => {
     test('webpack generates env variable containing the app version', () => {
-      // console.log(webpackConfig.plugins[1]);
-      const definePlugin = webpackConfig.plugins
-        .find((p: any) => p.constructor.name === 'DefinePlugin');
+      ctx.expectDefinePluginVariableToExist('VUE_APP_VERSION');
+    });
 
-      expect(definePlugin.definitions['process.env'].VUE_APP_VERSION)
-        .not.toBeFalsy();
+    test('webpack generates env variable containing the project name', () => {
+      ctx.expectDefinePluginVariableToExist('VUE_APP_PROJECT_NAME');
     });
   });
 

@@ -5,15 +5,14 @@
  */
 
 import { Container } from '@gridonic/client-services/src/core/container/Container';
-
-import Lazy from '@gridonic/client-services/src/decorator/lazy';
-
 import { ErrorTracker } from '@gridonic/client-services/src/tracking/error/ErrorTracker';
-import SentryErrorTracker from '@gridonic/client-services/src/tracking/error/SentryErrorTracker';
-
-import JsLogger from '@gridonic/client-services/src/core/logging/JsLogger';
 import { Logger } from '@gridonic/client-services/src/core/logging/Logger';
-import { LogLevel } from '@gridonic/client-services/src/core/logging/LogLevel';
+
+import {
+  Lazy, LogLevel,
+  JsLogger,
+  SentryErrorTracker,
+} from '@gridonic/client-services';
 
 export {
   // Service Container
