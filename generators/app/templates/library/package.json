@@ -1,0 +1,26 @@
+{
+  "name": "<%= project %>",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src/**/*",
+    "dist/**/*"
+  ],
+  "sideEffects": "false",
+  "scripts": {
+    "build": "tsc",
+    "test": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "pre-push": "npm run test"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "npm run lint",
+      "git add"
+    ]
+  }
+}

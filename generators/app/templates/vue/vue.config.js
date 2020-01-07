@@ -1,4 +1,4 @@
-const pkg = require('./package');
+const pkg = require('../library/package');
 
 process.env.VUE_APP_VERSION = pkg.version;
 process.env.VUE_APP_PROJECT_NAME = pkg.name;
