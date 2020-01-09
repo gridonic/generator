@@ -80,11 +80,9 @@ module.exports = {
         'vuex-class@^0.3.2',
 
         // Dependencies from Vue-Cli
-        'core-js@^3.4.3',
+        'core-js@^3.4.4',
         'register-service-worker@^1.6.2',
         'vue@^2.6.10',
-        'vue-class-component@^7.0.2',
-        'vue-property-decorator@^8.3.0',
         'vue-router@^3.1.3',
         'vuex@^3.1.2'
     ],
