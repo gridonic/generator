@@ -1,12 +1,14 @@
 import VueRouter from 'vue-router';
-
 import {
-  StoreActionTree, StoreGetterTree, StoreModule, StoreMutationTree,
-} from '@/main/lib/store';
+  Actions, Getters, Module, Mutations,
+} from '@/store/store';
 
-import { RootState, RouterState } from '@/store/store';
+export const namespace = 'router';
 
-export default class RouterModule implements StoreModule<RouterState, RootState> {
+export interface RouterState {
+}
+
+export default class RouterModule implements Module<RouterState> {
   private router: VueRouter;
 
   constructor(router: VueRouter) {
@@ -21,15 +23,15 @@ export default class RouterModule implements StoreModule<RouterState, RootState>
     return {};
   }
 
-  public get getters(): StoreGetterTree<RouterState, RootState> {
+  public get getters(): Getters<RouterState> {
     return {};
   }
 
-  public get mutations(): StoreMutationTree<RouterState> {
+  public get mutations(): Mutations<RouterState> {
     return {};
   }
 
-  public get actions(): StoreActionTree<RouterState, RootState> {
+  public get actions(): Actions<RouterState> {
     const self = this;
 
     return {

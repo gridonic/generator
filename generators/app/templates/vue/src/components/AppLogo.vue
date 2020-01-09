@@ -4,12 +4,10 @@
   </div>
 </template>
 
-<script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-
-  @Component
-  export default class AppLogo extends Vue {
-  }
+<script>
+  export default {
+    name: 'AppLogo',
+  };
 </script>
 
 <style scoped lang="scss">

@@ -16,8 +16,9 @@ import AppModule from '@/store/AppModule';
 import AppRouter from '@/router/AppRouter';
 import RouterModule from '@/store/RouterModule';
 
-import RootStore from '@/store/RootStore';
-import { RootState } from '@/store/store';
+import RootStore, { RootState } from '@/store/store';
+
+import '@/store/store-state';
 
 export default class AppContainer implements Container {
   @Lazy() public get appInfo(): AppInfo {
@@ -42,11 +43,8 @@ export default class AppContainer implements Container {
 
   @Lazy() public get rootStore(): RootStore {
     return new RootStore({
-      appInfo: this.appInfo,
-      storeModules: {
-        app: new AppModule(),
+        app: new AppModule(this.appInfo),
         router: new RouterModule(this.router),
-      },
     });
   }
 

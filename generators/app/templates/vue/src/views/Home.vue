@@ -5,19 +5,23 @@
   </div>
 </template>
 
-<script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-  import { State } from 'vuex-class';
-
+<script>
   import AppInfo from '@/main/AppInfo';
   import AppLogo from '@/components/AppLogo.vue';
 
-  @Component({
-    components: { AppLogo },
-  })
-  export default class Home extends Vue {
-    @State('appInfo') appInfo!: AppInfo;
-  }
+  import { namespace } from '@/store/AppModule';
+
+  const { mapState } = createNamespacedHelpers(namespace);
+
+  export default {
+    name: 'Home',
+    components: {
+      AppLogo,
+    },
+    computed: {
+      ...mapState(['info'])
+    }
+  };
 </script>
 
 <style scoped lang="scss">
