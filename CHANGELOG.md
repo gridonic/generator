@@ -10,6 +10,17 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [2.0.0]
+###### 2020-01-10
+
+###### Added
+
+- Template for a library / npm package
+
+###### Changed
+
+- Update vue js template to use the new stack with vue-cli
+
 ## [1.0.1]
 ###### 2019-07-10
 
