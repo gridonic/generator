@@ -37,7 +37,6 @@ module.exports = {
 
         // Integrate style linting
         'stylelint@^11.1.1',
-        'stylelint-config-rational-order@^0.1.2',
         'stylelint-config-standard@^19.0.0',
         'stylelint-order@^3.1.1',
         'stylelint-scss@^3.13.0',

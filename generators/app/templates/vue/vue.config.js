@@ -13,4 +13,14 @@ module.exports = {
       key: process.env.SSL_KEY || '/usr/local/etc/httpd/ssl/server.key',
     },
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `
+          @import "~@gridonic/components/styles/functions";
+          @import "~@gridonic/components/styles/mixins";
+        `,
+      },
+    },
+  },
 };

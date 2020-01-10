@@ -73,8 +73,9 @@ module.exports = {
         'public'
     ],
     dependencies: [
-        // Gridonic Client Services
-        "@gridonic/client-services@^0.1.1",
+        // Gridonic Client Services & Components
+        '@gridonic/client-services@^0.1.1',
+        '@gridonic/components@^0.1.0',
 
         // Dependencies from Vue-Cli
         'core-js@^3.4.4',
@@ -95,7 +96,6 @@ module.exports = {
 
         // Integrate style linting
         'stylelint@^11.1.1',
-        'stylelint-config-rational-order@^0.1.2',
         'stylelint-config-standard@^19.0.0',
         'stylelint-order@^3.1.1',
         'stylelint-scss@^3.13.0',
