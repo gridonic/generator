@@ -43,8 +43,8 @@ export default class AppContainer implements Container {
 
   @Lazy() public get rootStore(): RootStore {
     return new RootStore({
-        app: new AppModule(this.appInfo),
-        router: new RouterModule(this.router),
+      app: new AppModule(this.appInfo),
+      router: new RouterModule(this.router),
     });
   }
 

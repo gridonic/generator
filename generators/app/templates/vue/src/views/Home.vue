@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <app-logo/>
-    <div>App Version: {{ appInfo.appVersion }}</div>
+    <div>App Version: {{ info.appVersion }}</div>
   </div>
 </template>
 
 <script>
-  import AppInfo from '@/main/AppInfo';
-  import AppLogo from '@/components/AppLogo.vue';
+  import { createNamespacedHelpers } from 'vuex';
 
+  import AppLogo from '@/components/AppLogo.vue';
   import { namespace } from '@/store/AppModule';
 
   const { mapState } = createNamespacedHelpers(namespace);
@@ -19,8 +19,8 @@
       AppLogo,
     },
     computed: {
-      ...mapState(['info'])
-    }
+      ...mapState(['info']),
+    },
   };
 </script>
 
