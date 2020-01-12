@@ -6,7 +6,7 @@ module.exports = {
         '.browserslistrc',
         '.editorconfig',
         '.eslintrc.js',
-        '.gitignore',
+        [ 'gitignore', '.gitignore' ], // .gitignore is ignored by npm publish, so map it from 'gitignore'
         '.node-version',
         '.stylelintrc',
         'babel.config.js',

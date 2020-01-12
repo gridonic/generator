@@ -10,6 +10,13 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [2.0.2]
+###### 2020-01-12
+
+###### Fixed
+
+- Fix .gitignore still not included in builds of generator
+
 ## [2.0.1]
 ###### 2020-01-10
 
