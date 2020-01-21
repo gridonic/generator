@@ -10,6 +10,14 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [2.0.3]
+###### 2020-01-21
+
+###### Added
+
+- Template for vue-relay projects
+- "add" command for template plugins
+
 ## [2.0.2]
 ###### 2020-01-12
 
