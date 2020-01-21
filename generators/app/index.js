@@ -1,4 +1,5 @@
 const path = require('path');
+const merge = require('deepmerge');
 
 // @see https://github.com/yeoman/generator
 const Generator = require('yeoman-generator');
@@ -30,7 +31,15 @@ module.exports = class extends Generator {
             choices: kinds.map(({name, value}) => ({name, value}))
         }]);
 
-        const { onPrompting } = this.currentKind;
+        this.kind = kinds.find(kind => kind.value === this.answers.targetKind);
+
+        if (this.kind.baseKind) {
+            const baseKind = kinds.find(kind => kind.value === this.kind.baseKind);
+
+            this.kind = merge(baseKind, this.kind);
+        }
+
+        const { onPrompting } = this.kind;
 
         if (onPrompting) {
             this.answers = Object.assign(
@@ -42,7 +51,7 @@ module.exports = class extends Generator {
     }
 
     async writing() {
-        const {value, files, variables} = this.currentKind;
+        const {value, baseKind, files, exclude, variables} = this.kind;
 
         if (Array.isArray(files) === false || files.length < 1) {
             return;
@@ -67,16 +76,25 @@ module.exports = class extends Generator {
                 source = destination = file;
             }
 
+            const baseTemplatePath = this.templatePath(path.join(baseKind || value, source));
+            const overridenTemplatePath = this.templatePath(path.join(value, source));
+
+            const templatePath = this.fs.exists(overridenTemplatePath) ? overridenTemplatePath : baseTemplatePath;
+
             this.fs.copyTpl(
-                this.templatePath(path.join(value, source)),
+                templatePath,
                 this.destinationPath(path.join(this.appPath, destination)),
                 data
             )
         });
+
+        exclude.forEach((file) => {
+            this.fs.delete(this.destinationPath(path.join(this.appPath, file)));
+        })
     }
 
     async install() {
-        const {devDependencies, dependencies, onInstall} = this.currentKind;
+        const {devDependencies, dependencies, onInstall} = this.kind;
 
         if (onInstall) {
             await onInstall(this);
@@ -101,13 +119,5 @@ module.exports = class extends Generator {
 
     end() {
         success('Done. Happy coding! ✌️', 1, 1);
-    }
-
-    get currentKind() {
-        if (!this.answers) {
-            return null;
-        }
-
-        return kinds.find(kind => kind.value === this.answers.targetKind);
     }
 };

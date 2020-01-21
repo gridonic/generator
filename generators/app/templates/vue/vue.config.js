@@ -5,6 +5,13 @@ process.env.VUE_APP_PROJECT_NAME = pkg.name;
 
 module.exports = {
   lintOnSave: true,
+  pwa: {
+    workboxOptions: {
+      skipWaiting: true,
+      clientsClaim: true,
+      exclude: [/\.htaccess/],
+    },
+  },
   devServer: {
     host: 'localhost',
     https: {
