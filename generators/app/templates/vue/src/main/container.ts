@@ -22,7 +22,6 @@ export interface AppContainer {
   store: AppStore,
   router: VueRouter;
   errorTracker: ErrorTracker;
-  ajaxClient: AjaxClient;
 }
 
 export async function createErrorTracker(appInfo: AppInfo) {

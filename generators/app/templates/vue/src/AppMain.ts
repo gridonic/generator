@@ -11,6 +11,7 @@ import App from './App.vue';
 import AppInfo from '@/main/AppInfo';
 import { log } from '@/main/lib/logger';
 import {
+  AppContainer,
   createErrorTracker, ErrorTracker,
 } from '@/main/container';
 import AppRouter from '@/router/AppRouter';
