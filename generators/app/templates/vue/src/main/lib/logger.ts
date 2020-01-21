@@ -6,14 +6,13 @@
  * make the exception in this case.
  */
 
-import { JsLogger, LogLevel } from '@/main/lib/client-services';
+import { JsLogger, LogLevel } from '@gridonic/client-services';
+
 import AppInfo from '@/main/AppInfo';
 
 const appInfo = new AppInfo();
-
 const logger = new JsLogger(LogLevel[appInfo.logLevel as keyof typeof LogLevel]);
 
-// Add desired channels
 const log = {
   default: logger,
   app: logger.createChannel('app'),

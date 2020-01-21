@@ -3,58 +3,65 @@ import './registerServiceWorker';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
+import VueI18n from 'vue-i18n';
 
+import { Lazy } from '@gridonic/client-services';
 import App from './App.vue';
 
-import AppContainer from '@/main/AppContainer';
 import AppInfo from '@/main/AppInfo';
 import { log } from '@/main/lib/logger';
+import {
+  createErrorTracker, ErrorTracker,
+} from '@/main/container';
+import AppRouter from '@/router/AppRouter';
+import RootStore from '@/store/store';
+import AppModule from '@/store/AppModule';
+import RouterModule from '@/store/RouterModule';
 
 export default class AppMain {
   private container!: AppContainer;
 
-  public init() {
+  private errorTracker!: ErrorTracker;
+
+  public async init() {
+    await this.startErrorTracking();
+    await this.createServiceContainer();
+
     return this
-      .createServiceContainer()
-      .startErrorTracking()
       .createVueApp()
       .logAppStartupInfo();
   }
 
-  private createServiceContainer() {
-    this.container = new AppContainer();
+  private async createServiceContainer() {
+    this.container = {
+      appInfo: this.appInfo,
+      store: this.store,
+      router: this.router,
+      errorTracker: this.errorTracker,
+    };
 
     return this;
   }
 
-  private startErrorTracking() {
-    this.container.errorTracker.start();
+  private async startErrorTracking() {
+    this.errorTracker = await createErrorTracker(this.appInfo);
+    this.errorTracker.start();
 
     return this;
   }
+
 
   private createVueApp() {
     Vue.config.productionTip = false;
 
     new Vue({
-      router: this.createRouter(),
-      store: this.createStore(),
+      router: this.router,
+      store: this.store,
+      i18n: this.i18n,
       render: h => h(App),
     }).$mount('#app');
 
     return this;
-  }
-
-  private createRouter() {
-    Vue.use(VueRouter);
-
-    return this.container.router;
-  }
-
-  private createStore() {
-    Vue.use(Vuex);
-
-    return this.container.store;
   }
 
   private logAppStartupInfo() {
@@ -67,7 +74,32 @@ export default class AppMain {
     );
   }
 
-  private get appInfo(): AppInfo {
-    return this.container.appInfo;
+  @Lazy() private get appInfo(): AppInfo {
+    return new AppInfo();
+  }
+
+  @Lazy() private get store() {
+    Vue.use(Vuex);
+
+    const rootStore = new RootStore({
+      app: new AppModule(this.appInfo),
+      router: new RouterModule(this.router),
+    });
+
+    return new Vuex.Store(rootStore);
+  }
+
+  @Lazy() private get router() {
+    Vue.use(VueRouter);
+
+    return new VueRouter(new AppRouter());
+  }
+
+  @Lazy() private get i18n() {
+    Vue.use(VueI18n);
+
+    return new VueI18n({
+      locale: 'en',
+    });
   }
 }

@@ -33,6 +33,9 @@ export interface Mutations<TState> extends MutationTree<TState> {
 export interface Actions<TState> extends ActionTree<TState, RootState> {
 }
 
+export interface AppStore extends Store<RootState> {
+}
+
 export default class RootStore implements StoreOptions<RootState> {
   private readonly storeModules: ModuleTree<RootState>;
 

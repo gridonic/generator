@@ -74,7 +74,7 @@ module.exports = {
     ],
     dependencies: [
         // Gridonic Client Services & Components
-        '@gridonic/client-services@^0.1.1',
+        '@gridonic/client-services@^0.1.9',
         '@gridonic/components@^0.1.0',
 
         // Dependencies from Vue-Cli
@@ -82,7 +82,8 @@ module.exports = {
         'register-service-worker@^1.6.2',
         'vue@^2.6.10',
         'vue-router@^3.1.3',
-        'vuex@^3.1.2'
+        'vuex@^3.1.2',
+        'vue-i18n@^8.15.1'
     ],
     devDependencies: [
         // Vue-Cli Version for this template

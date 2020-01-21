@@ -23,4 +23,8 @@ module.exports = {
       },
     },
   },
+  chainWebpack: (config) => {
+    // https://medium.com/@mrodal/how-to-make-lazy-loading-actually-work-in-vue-cli-3-7f3f88cfb102
+    config.plugins.delete('prefetch');
+  },
 };
