@@ -9,26 +9,20 @@ import { AjaxResponse, AjaxRequestConfig, AjaxClient } from '@gridonic/client-se
 
 import { ComponentRelay, ComponentProvider, ComponentInfo } from '@gridonic/client-services/dist/vue/ComponentRelay';
 
-import { logger } from '@/main/lib/logger';
+import { Lazy } from '@gridonic/client-services';
 
-import AppInfo from '@/main/AppInfo';
-import { AppStore } from '@/store/store';
+import { logger } from '@/lib-glue/logger';
+
+import AppInfo from '@/AppInfo';
 
 // Export interfaces
 export {
   Logger, ErrorTracker, ComponentRelay, ComponentProvider, ComponentInfo,
-  AjaxResponse, AjaxRequestConfig, AjaxClient,
+  AjaxResponse, AjaxRequestConfig, AjaxClient, Lazy,
 };
 
-export interface AppContainer {
-  appInfo: AppInfo;
-  errorTracker: ErrorTracker;
-  store: AppStore,
-  i18n: VueI18n,
-}
-
 export async function createErrorTracker(appInfo: AppInfo): Promise<ErrorTracker> {
-  const { SentryErrorTracker } = (await import(/* webpackChunkName: "error-tracker" */ './lib/client-services/sentry-error-tracker'));
+  const { SentryErrorTracker } = (await import(/* webpackChunkName: "error-tracker" */ '@/lib-glue/client-services/sentry-error-tracker'));
 
   return new SentryErrorTracker(
     logger, {
@@ -42,11 +36,11 @@ export async function createErrorTracker(appInfo: AppInfo): Promise<ErrorTracker
 }
 
 export async function createComponentRelay(): Promise<ComponentRelay> {
-  const { VueRelay } = (await import(/* webpackChunkName: "vue-relay" */ './lib/client-services/vue-relay'));
+  const { VueRelay } = (await import(/* webpackChunkName: "vue-relay" */ '@/lib-glue/client-services/vue-relay'));
   return new VueRelay(logger, Vue);
 }
 
 export async function createAjaxClient() {
-  const { AxiosAjaxClient } = (await import(/* webpackChunkName: "ajax-client" */ './lib/client-services/axios-ajax-client'));
+  const { AxiosAjaxClient } = (await import(/* webpackChunkName: "ajax-client" */ '@/lib-glue/client-services/axios-ajax-client'));
   return new AxiosAjaxClient();
 }

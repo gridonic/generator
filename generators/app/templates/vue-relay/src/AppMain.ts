@@ -4,21 +4,22 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import VueI18n from 'vue-i18n';
 
-import { Lazy } from '@gridonic/client-services';
-
 import {
-  AppContainer,
   ComponentInfo, createComponentRelay,
   createErrorTracker,
   ErrorTracker,
-} from '@/main/container';
+  Lazy,
+} from '@/lib-glue/client-services';
 
-import { log } from '@/main/lib/logger';
-import AppInfo from '@/main/AppInfo';
+import { log } from '@/lib-glue/logger';
+import AppInfo from '@/AppInfo';
 
 import RootStore from '@/store/store';
 import AppModule from '@/store/AppModule';
-import AppComponentProvider from '@/main/AppComponentProvider';
+
+import AppComponentProvider from '@/AppComponentProvider';
+
+import { AppContainer } from '@/container';
 
 export default class AppMain {
   private container!: AppContainer;

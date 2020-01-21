@@ -1,4 +1,6 @@
-import { AppContainer, ComponentProvider, createAjaxClient } from '@/main/container';
+import { ComponentProvider } from '@/lib-glue/client-services';
+
+import { AppContainer } from '@/container';
 
 export default class AppComponentProvider implements ComponentProvider {
   private container: AppContainer;

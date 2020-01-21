@@ -8,7 +8,7 @@
 
 import { JsLogger, LogLevel } from '@gridonic/client-services';
 
-import AppInfo from '@/main/AppInfo';
+import AppInfo from '@/AppInfo';
 
 const appInfo = new AppInfo();
 const logger = new JsLogger(LogLevel[appInfo.logLevel as keyof typeof LogLevel]);

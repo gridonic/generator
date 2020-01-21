@@ -4,11 +4,12 @@ module.exports = {
     baseKind: 'vue',
     files: [
         'src/AppMain.ts',
-        'src/main/container.ts',
-        'src/main/AppComponentProvider.ts',
-        'src/main/lib/client-services/vue-relay.ts',
+        'src/container.ts',
+        'src/AppComponentProvider.ts',
+        'src/lib-glue/client-services/vue-relay.ts',
     ],
     exclude: [
+        'src/views',
         'src/App.vue',
     ]
 };

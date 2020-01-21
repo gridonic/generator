@@ -5,19 +5,20 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import VueI18n from 'vue-i18n';
 
-import { Lazy } from '@gridonic/client-services';
 import App from './App.vue';
 
-import AppInfo from '@/main/AppInfo';
-import { log } from '@/main/lib/logger';
+import AppInfo from '@/AppInfo';
+import { log } from '@/lib-glue/logger';
 import {
-  AppContainer,
-  createErrorTracker, ErrorTracker,
-} from '@/main/container';
+  createErrorTracker, ErrorTracker, Lazy,
+} from '@/lib-glue/client-services';
+
 import AppRouter from '@/router/AppRouter';
 import RootStore from '@/store/store';
 import AppModule from '@/store/AppModule';
 import RouterModule from '@/store/RouterModule';
+
+import { AppContainer } from '@/container';
 
 export default class AppMain {
   private container!: AppContainer;
@@ -38,6 +39,7 @@ export default class AppMain {
       appInfo: this.appInfo,
       store: this.store,
       router: this.router,
+      i18n: this.i18n,
       errorTracker: this.errorTracker,
     };
 

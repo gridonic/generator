@@ -2,7 +2,7 @@ import {
   Actions, Getters, Module, Mutations,
 } from '@/store/store';
 
-import AppInfo from '@/main/AppInfo';
+import AppInfo from '@/AppInfo';
 
 export const namespace = 'app';
 

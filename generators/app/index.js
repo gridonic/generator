@@ -88,7 +88,7 @@ module.exports = class extends Generator {
             )
         });
 
-        exclude.forEach((file) => {
+        (exclude || []).forEach((file) => {
             this.fs.delete(this.destinationPath(path.join(this.appPath, file)));
         })
     }
