@@ -9,6 +9,7 @@
   ],
   "dependencies": {
     "@gridonic/log": "^1.0.0",
+    "chalk": "^3.0.0",
     "yeoman-environment": "^2.3.4",
     "yeoman-generator": "^3.2.0"
   },

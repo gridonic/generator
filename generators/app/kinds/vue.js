@@ -40,14 +40,13 @@ module.exports = {
     variables: {
         sentryDsn: ''
     },
-    // TODO: retrieved answer gets not written into .env.prod / .env.stage, why?
-    // async onPrompting(generator) {
-    //     return generator.prompt([{
-    //         type: 'string',
-    //         name: 'sentryDsn',
-    //         message: 'Enter the sentry DSN for this project, if you already know it:',
-    //     }]);
-    // },
+    async onPrompting(generator) {
+        return generator.prompt([{
+            type: 'string',
+            name: 'sentryDsn',
+            message: 'Enter the sentry DSN for this project, if you already know it:',
+        }]);
+    },
     files: [
         // Config files
         '.browserslistrc',
