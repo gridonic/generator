@@ -100,6 +100,10 @@ module.exports = {
         'stylelint-order@^3.1.1',
         'stylelint-scss@^3.13.0',
 
+        // Post Css plugins
+        'postcss-lh@^2.0.2',
+        'postcss-replace@^1.1.0',
+
         // Dependencies from Vue-Cli
         '@types/jest@^24.0.19',
         '@vue/cli-plugin-babel@^4.1.0',
