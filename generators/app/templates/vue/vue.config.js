@@ -1,3 +1,5 @@
+const { GridonicApiWebpackPlugin } = require('@gridonic/client-services');
+
 const pkg = require('./package');
 
 process.env.VUE_APP_VERSION = pkg.version;
@@ -25,8 +27,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         prependData: `
-          @import "~@gridonic/components/styles/functions";
-          @import "~@gridonic/components/styles/mixins";
+          @import "~@gridonic/components/styles";
         `,
       },
     },
@@ -34,5 +35,10 @@ module.exports = {
   chainWebpack: (config) => {
     // https://medium.com/@mrodal/how-to-make-lazy-loading-actually-work-in-vue-cli-3-7f3f88cfb102
     config.plugins.delete('prefetch');
+
+    // Enable Gridonic Api Plugin
+    config
+      .plugin('gridonic-api')
+      .use(GridonicApiWebpackPlugin, [pkg]);
   },
 };

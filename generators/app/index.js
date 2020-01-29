@@ -1,3 +1,4 @@
+const uuidv4 = require('uuid/v4');
 const path = require('path');
 const merge = require('deepmerge');
 
@@ -9,6 +10,8 @@ const {info, success} = require('@gridonic/log');
 
 // Import supported kind of projects
 const kinds = require('./kinds');
+
+const pkg = require('../../package');
 
 // @see https://yeoman.io/authoring/running-context.html
 module.exports = class extends Generator {
@@ -80,17 +83,20 @@ module.exports = class extends Generator {
             const overridenTemplatePath = this.templatePath(path.join(value, source));
 
             const templatePath = this.fs.exists(overridenTemplatePath) ? overridenTemplatePath : baseTemplatePath;
+            const destinationPath = this.destinationPath(path.join(this.appPath, destination))
 
             this.fs.copyTpl(
                 templatePath,
-                this.destinationPath(path.join(this.appPath, destination)),
+                destinationPath,
                 data
-            )
+            );
         });
 
         (exclude || []).forEach((file) => {
             this.fs.delete(this.destinationPath(path.join(this.appPath, file)));
-        })
+        });
+
+        this.extendPackageJson();
     }
 
     async install() {
@@ -108,7 +114,6 @@ module.exports = class extends Generator {
 
                 info(`Installing ${key}…`, 1, 1);
 
-                console.log(key);
                 this.npmInstall(value, {
                     prefix: this.appPath,
                     saveDev: key === 'devDependencies'
@@ -119,5 +124,25 @@ module.exports = class extends Generator {
 
     end() {
         success('Done. Happy coding! ✌️', 1, 1);
+    }
+
+    extendPackageJson() {
+        const { value } = this.kind;
+        const pkgDestinationPath = this.destinationPath(path.join(this.appPath, 'package.json'));
+
+        if (this.fs.exists(pkgDestinationPath)) {
+            info(`Extending package.json with generator information`, 1, 1);
+
+            this.fs.extendJSON(pkgDestinationPath, {
+                gridonic: {
+                    apiToken: this.answers.gridonicApiToken || '',
+                    generator: {
+                        kind: value,
+                        projectId: uuidv4(),
+                        version: pkg.version,
+                    },
+                }
+            });
+        }
     }
 };

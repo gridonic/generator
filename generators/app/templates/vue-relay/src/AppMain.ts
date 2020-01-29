@@ -7,7 +7,7 @@ import VueI18n from 'vue-i18n';
 import {
   ComponentInfo, createComponentRelay,
   createErrorTracker,
-  ErrorTracker,
+  ErrorTracker, promise,
   Lazy,
 } from '@/lib-glue/client-services';
 
@@ -69,9 +69,9 @@ export default class AppMain {
     const relay = await createComponentRelay();
     const provider = new AppComponentProvider(this.container);
 
-    return provider.componentInfos.forEach((c: ComponentInfo) => {
-      relay.parse(c);
-    });
+    return promise.each(provider.componentInfos, (async (c: ComponentInfo) => {
+      await relay.parse(c);
+    }));
   }
 
   @Lazy() private get appInfo(): AppInfo {

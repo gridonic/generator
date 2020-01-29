@@ -11,10 +11,6 @@
 </script>
 
 <style lang="scss">
-  @import "~@gridonic/components/styles/base";
-  @import "~@gridonic/components/styles/button-plain";
-  @import "~@gridonic/components/styles/print";
-
   @include gd-base;
 
   button {

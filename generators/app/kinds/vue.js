@@ -45,7 +45,12 @@ module.exports = {
             type: 'string',
             name: 'sentryDsn',
             message: 'Enter the sentry DSN for this project, if you already know it:',
-        }]);
+        }, {
+            type: 'string',
+            name: 'gridonicApiToken',
+            message: 'Enter the gridonic Api Token. You can find it here:\n\t-> https://git.gridonic.ch/gridonic/gridonic-api/issues/1:',
+        }
+        ]);
     },
     files: [
         // Config files
@@ -55,7 +60,7 @@ module.exports = {
         '.env.prod',
         '.env.stage',
         '.eslintrc.js',
-        [ 'gitignore', '.gitignore' ], // .gitignore is ignored by npm publish, so map it from 'gitignore'
+        ['gitignore', '.gitignore'], // .gitignore is ignored by npm publish, so map it from 'gitignore'
         '.node-version',
         '.stylelintrc',
         'babel.config.js',
@@ -73,8 +78,8 @@ module.exports = {
     ],
     dependencies: [
         // Gridonic Client Services & Components
-        '@gridonic/client-services@^0.1.9',
-        '@gridonic/components@^0.1.0',
+        '@gridonic/client-services@^0.1.11',
+        '@gridonic/components@^0.2.0',
 
         // Dependencies from Vue-Cli
         'core-js@^3.4.4',
@@ -124,5 +129,5 @@ module.exports = {
         'sass-loader@^8.0.0',
         'typescript@~3.5.3',
         'vue-template-compiler@^2.6.10',
-]
+    ]
 };

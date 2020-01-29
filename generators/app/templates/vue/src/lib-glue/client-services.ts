@@ -9,7 +9,7 @@ import { AjaxResponse, AjaxRequestConfig, AjaxClient } from '@gridonic/client-se
 
 import { ComponentRelay, ComponentProvider, ComponentInfo } from '@gridonic/client-services/dist/vue/ComponentRelay';
 
-import { Lazy } from '@gridonic/client-services';
+import { Lazy, promise } from '@gridonic/client-services';
 
 import { logger } from '@/lib-glue/logger';
 
@@ -18,7 +18,7 @@ import AppInfo from '@/AppInfo';
 // Export interfaces
 export {
   Logger, ErrorTracker, ComponentRelay, ComponentProvider, ComponentInfo,
-  AjaxResponse, AjaxRequestConfig, AjaxClient, Lazy,
+  AjaxResponse, AjaxRequestConfig, AjaxClient, Lazy, promise,
 };
 
 export async function createErrorTracker(appInfo: AppInfo): Promise<ErrorTracker> {
