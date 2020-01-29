@@ -10,6 +10,15 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [2.0.4]
+###### 2020-01-29
+
+###### Added
+
+- feat(generator): add check for newer version of generator on create
+- feat(template): add project info in package.json
+- feat(vue): add default postcss config for vue templates
+
 ## [2.0.3]
 ###### 2020-01-21
 
