@@ -1,12 +1,15 @@
-const uuidv4 = require('uuid/v4');
 const path = require('path');
+
+const uuidv4 = require('uuid/v4');
 const merge = require('deepmerge');
+const latestVersion = require('latest-version');
+const semver  = require('semver');
 
 // @see https://github.com/yeoman/generator
 const Generator = require('yeoman-generator');
 
 // @see https://github.com/gridonic/log
-const {info, success} = require('@gridonic/log');
+const {info, warning, success} = require('@gridonic/log');
 
 // Import supported kind of projects
 const kinds = require('./kinds');
@@ -27,6 +30,8 @@ module.exports = class extends Generator {
     }
 
     async prompting() {
+        await this.checkGeneratorForUpdate();
+
         this.answers = await this.prompt([{
             type: 'list',
             name: 'targetKind',
@@ -124,6 +129,35 @@ module.exports = class extends Generator {
 
     end() {
         success('Done. Happy coding! ✌️', 1, 1);
+    }
+
+    async checkGeneratorForUpdate() {
+        try {
+            const {name, version} = pkg;
+
+            const latest = await latestVersion(name);
+
+            if (semver.gt(latest, version)) {
+                warning(`There is a newer version of the generator available (${latest}). Update by executing: npm i -g @gridonic/generator`);
+
+                const answers = await this.prompt([{
+                    type: 'confirm',
+                    name: 'continue',
+                    default: false,
+                    message: `Continue anyway?`,
+                }]);
+
+                if (!answers.continue) {
+                    process.exit(1);
+                }
+            } else {
+                info('Generator is up-to-date');
+            }
+        } catch (error) {
+            warning('Could not retrieve latest generator version');
+        }
+
+        console.log('\n');
     }
 
     extendPackageJson() {
