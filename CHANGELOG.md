@@ -10,6 +10,13 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [2.1.0]
+###### 2020-01-30
+
+###### Added
+
+- feat(config-test): add helper for config check tests in created projects
+
 ## [2.0.4]
 ###### 2020-01-29
 
@@ -109,7 +116,8 @@ Looking for [unreleased] changes?
 
 First version ready for internal testing.
 
-[unreleased]: https://github.com/gridonic/generator/compare/1.0.1...HEAD
+[unreleased]: https://github.com/gridonic/generator/compare/2.1.0...HEAD
+[2.0.4]: https://github.com/gridonic/generator/compare/2.0.4...2.1.0
 [1.0.1]: https://github.com/gridonic/generator/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/gridonic/generator/compare/0.1.3...1.0.0
 [0.1.3]: https://github.com/gridonic/generator/compare/0.1.2...0.1.3
