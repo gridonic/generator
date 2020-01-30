@@ -1,9 +1,9 @@
-import dotenv from 'dotenv';
-import fs from 'fs';
+const dotenv = require('dotenv');
+const fs = require('fs');
 
-import Checker from './Checker';
+const Checker = require('./Checker');
 
-export default class ProjectVerifier {
+module.exports = class ProjectVerifier {
     constructor(rootDir, webpackConfig, pkg) {
         this.rootDir = rootDir;
         this.webpackConfig = webpackConfig;

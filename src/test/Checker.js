@@ -8,7 +8,7 @@ expect.extend({
     },
 });
 
-export default class Checker {
+module.exports = class Checker {
     constructor() {
         this.checks = [];
     }
