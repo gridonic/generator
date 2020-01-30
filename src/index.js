@@ -1,5 +1,7 @@
 const cli = require('./cli');
+const ProjectVerifier = require('./test/ProjectVerifier');
 
 module.exports = {
-    cli
+    cli,
+    projectVerifier: new ProjectVerifier(),
 };

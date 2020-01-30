@@ -34,6 +34,8 @@
  * - Show message at the end to run `npm run test:unit` to check the configuration
  *
  */
+// const pkg = require('../../../package');
+
 module.exports = {
     name: 'Vue.js Gridonic - Opinionated template for Gridonic Projects using vue-cli 4',
     value: 'vue',
@@ -92,6 +94,9 @@ module.exports = {
         'vue-i18n@^8.15.1'
     ],
     devDependencies: [
+        // Gridonic Generator
+        // `@gridonic/components@^${pkg.version}`,
+
         // Vue-Cli Version for this template
         '@vue/cli@^4.1.1',
 

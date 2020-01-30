@@ -1,6 +1,6 @@
 {
   "name": "@gridonic/generator",
-  "version": "2.0.5",
+  "version": "2.0.4",
   "description": "Our yeoman generator.",
   "main": "src/index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "@gridonic/log": "^1.0.0",
     "chalk": "^3.0.0",
     "deepmerge": "^4.2.2",
+    "dotenv": "^8.2.0",
     "latest-version": "^5.1.0",
     "semver": "^7.1.1",
     "uuid": "^3.4.0",
