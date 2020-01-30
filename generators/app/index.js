@@ -3,7 +3,7 @@ const path = require('path');
 const uuidv4 = require('uuid/v4');
 const merge = require('deepmerge');
 const latestVersion = require('latest-version');
-const semver  = require('semver');
+const semver = require('semver');
 
 // @see https://github.com/yeoman/generator
 const Generator = require('yeoman-generator');
@@ -21,6 +21,8 @@ module.exports = class extends Generator {
     constructor(args, opts) {
         super(args, opts);
 
+        this.answers = opts.config || {};
+
         this.argument('appname', {
             type: String,
             required: true
@@ -32,12 +34,15 @@ module.exports = class extends Generator {
     async prompting() {
         await this.checkGeneratorForUpdate();
 
-        this.answers = await this.prompt([{
-            type: 'list',
-            name: 'targetKind',
-            message: 'What kind of project is it?',
-            choices: kinds.map(({name, value}) => ({name, value}))
-        }]);
+        this.answers = Object.assign({},
+            this.answers,
+            await this.prompt([{
+                type: 'list',
+                name: 'targetKind',
+                message: 'What kind of project is it?',
+                choices: kinds.map(({name, value}) => ({name, value})),
+                when: () => !this.answers.targetKind,
+            }]));
 
         this.kind = kinds.find(kind => kind.value === this.answers.targetKind);
 
@@ -47,7 +52,7 @@ module.exports = class extends Generator {
             this.kind = merge(baseKind, this.kind);
         }
 
-        const { onPrompting } = this.kind;
+        const {onPrompting} = this.kind;
 
         if (onPrompting) {
             this.answers = Object.assign(
@@ -88,7 +93,7 @@ module.exports = class extends Generator {
             const overridenTemplatePath = this.templatePath(path.join(value, source));
 
             const templatePath = this.fs.exists(overridenTemplatePath) ? overridenTemplatePath : baseTemplatePath;
-            const destinationPath = this.destinationPath(path.join(this.appPath, destination))
+            const destinationPath = this.destinationPath(path.join(this.appPath, destination));
 
             this.fs.copyTpl(
                 templatePath,
@@ -161,7 +166,7 @@ module.exports = class extends Generator {
     }
 
     extendPackageJson() {
-        const { value } = this.kind;
+        const {value} = this.kind;
         const pkgDestinationPath = this.destinationPath(path.join(this.appPath, 'package.json'));
 
         if (this.fs.exists(pkgDestinationPath)) {

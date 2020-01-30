@@ -45,10 +45,12 @@ module.exports = {
             type: 'string',
             name: 'sentryDsn',
             message: 'Enter the sentry DSN for this project, if you already know it:',
+            when: () => !generator.answers.sentryDsn,
         }, {
             type: 'string',
             name: 'gridonicApiToken',
             message: 'Enter the gridonic Api Token. You can find it here:\n\t-> https://git.gridonic.ch/gridonic/gridonic-api/issues/1:',
+            when: () => !generator.answers.gridonicApiToken,
         }
         ]);
     },
