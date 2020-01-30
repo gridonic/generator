@@ -10,6 +10,13 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [2.1.1]
+###### 2020-01-30
+
+###### Added
+
+- fix: incorrectly implemented and exported check test utils
+
 ## [2.1.0]
 ###### 2020-01-30
 
@@ -116,7 +123,8 @@ Looking for [unreleased] changes?
 
 First version ready for internal testing.
 
-[unreleased]: https://github.com/gridonic/generator/compare/2.1.0...HEAD
+[unreleased]: https://github.com/gridonic/generator/compare/2.1.1...HEAD
+[2.1.o]: https://github.com/gridonic/generator/compare/2.1.0...2.1.1
 [2.0.4]: https://github.com/gridonic/generator/compare/2.0.4...2.1.0
 [1.0.1]: https://github.com/gridonic/generator/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/gridonic/generator/compare/0.1.3...1.0.0
