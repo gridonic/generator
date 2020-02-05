@@ -80,7 +80,7 @@ module.exports = {
     ],
     dependencies: [
         // Gridonic Client Services & Components
-        '@gridonic/client-services@^0.1.11',
+        '@gridonic/client-services@^0.2.0',
         '@gridonic/components@^0.2.0',
 
         // Dependencies from Vue-Cli

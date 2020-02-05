@@ -5,7 +5,7 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import VueI18n from 'vue-i18n';
 
-import App from './App.vue';
+import App from '@/App.vue';
 
 import AppInfo from '@/AppInfo';
 import { log } from '@/lib-glue/logger';
