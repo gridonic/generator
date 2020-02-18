@@ -13,9 +13,11 @@
   "dependencies": {
     "@gridonic/log": "^1.0.0",
     "chalk": "^3.0.0",
+    "clipboardy": "^2.1.0",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
     "jest": "^25.1.0",
+    "json-to-ts": "^1.6.0",
     "latest-version": "^5.1.0",
     "semver": "^7.1.1",
     "uuid": "^3.4.0",

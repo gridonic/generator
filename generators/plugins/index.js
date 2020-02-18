@@ -15,6 +15,8 @@ module.exports = class extends Generator {
     constructor(args, opts) {
         super(args, opts);
 
+        this.successful = true;
+
         this.argument('pluginName', {
             type: String,
             required: true
@@ -41,22 +43,33 @@ module.exports = class extends Generator {
     }
 
     async writing() {
-        const { value, jobs } = this.plugin;
+        const {value, jobs} = this.plugin;
 
         const data = this.answers;
 
         jobs.forEach((job) => {
-            const source = path.join(value, job.source);
+            try {
+                if (job.source && job.target) {
+                    const source = path.join(value, job.source);
 
-            const target = job.target.replace(/<% (.*?) %>/g, (match, varname) => {
-                return data[varname] || '';
-            });
+                    const target = job.target.replace(/<% (.*?) %>/g, (match, varname) => {
+                        return data[varname] || '';
+                    });
 
-            this.fs.copyTpl(
-                this.templatePath(source),
-                this.destinationPath(path.join(this.appPath, target)),
-                data
-            );
+                    this.fs.copyTpl(
+                        this.templatePath(source),
+                        this.destinationPath(path.join(this.appPath, target)),
+                        data
+                    );
+                }
+
+                if (job.run) {
+                    job.run(data);
+                }
+            } catch (e) {
+                error(e);
+                this.successful = false;
+            }
         });
     }
 
@@ -64,6 +77,8 @@ module.exports = class extends Generator {
     }
 
     end() {
-        success('Done. Have fun with your generated code! ✌️', 1, 1);
+        if (this.successful) {
+            success('Done. Have fun with your generated code! ✌️', 1, 1);
+        }
     }
 };
