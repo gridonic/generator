@@ -61,7 +61,7 @@ export default class AppMain {
       router: this.router,
       store: this.store,
       i18n: this.i18n,
-      render: h => h(App),
+      render: (h) => h(App),
     }).$mount('#app');
 
     return this;

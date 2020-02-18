@@ -81,13 +81,13 @@ module.exports = {
     dependencies: [
         // Gridonic Client Services & Components
         '@gridonic/client-services@^0.2.0',
-        '@gridonic/components@^0.2.0',
+        '@gridonic/components@^0.2.1',
 
         // Dependencies from Vue-Cli
-        'core-js@^3.4.4',
+        'core-js@^3.6.4',
         'register-service-worker@^1.6.2',
-        'vue@^2.6.10',
-        'vue-router@^3.1.3',
+        'vue@^2.6.11',
+        'vue-router@^3.1.5',
         'vuex@^3.1.2',
         'vue-i18n@^8.15.1'
     ],
@@ -96,7 +96,7 @@ module.exports = {
         `@gridonic/generator`,
 
         // Vue-Cli Version for this template
-        '@vue/cli@^4.1.1',
+        '@vue/cli@^4.2.2',
 
         // Dot-Env, for configuration testing purposes
         'dotenv@^8.2.0',
@@ -116,23 +116,26 @@ module.exports = {
 
         // Dependencies from Vue-Cli
         '@types/jest@^24.0.19',
-        '@vue/cli-plugin-babel@^4.1.0',
-        '@vue/cli-plugin-e2e-cypress@^4.1.0',
-        '@vue/cli-plugin-eslint@^4.1.0',
-        '@vue/cli-plugin-pwa@^4.1.0',
-        '@vue/cli-plugin-router@^4.1.0',
-        '@vue/cli-plugin-typescript@^4.1.0',
-        '@vue/cli-plugin-unit-jest@^4.1.0',
-        '@vue/cli-plugin-vuex@^4.1.0',
-        '@vue/cli-service@^4.1.0',
-        '@vue/eslint-config-airbnb@^4.0.0',
-        '@vue/eslint-config-typescript@^4.0.0',
-        '@vue/test-utils@1.0.0-beta.29',
-        'eslint@^5.16.0',
-        'eslint-plugin-vue@^5.0.0',
-        'sass@^1.23.7',
-        'sass-loader@^8.0.0',
-        'typescript@~3.5.3',
-        'vue-template-compiler@^2.6.10',
+        '@typescript-eslint/eslint-plugin@^2.18.0',
+        '@typescript-eslint/parser@^2.18.0',
+        '@vue/cli-plugin-babel@~4.2.0',
+        '@vue/cli-plugin-e2e-cypress@~4.2.0',
+        '@vue/cli-plugin-eslint@~4.2.0',
+        '@vue/cli-plugin-pwa@~4.2.0',
+        '@vue/cli-plugin-router@~4.2.0',
+        '@vue/cli-plugin-typescript@~4.2.0',
+        '@vue/cli-plugin-unit-jest@~4.2.0',
+        '@vue/cli-plugin-vuex@~4.2.0',
+        '@vue/cli-service@~4.2.0',
+        '@vue/eslint-config-airbnb@^5.0.2',
+        '@vue/eslint-config-typescript@^5.0.1',
+        '@vue/test-utils@1.0.0-beta.31',
+        'eslint@^6.7.2',
+        'eslint-plugin-import@^2.20.1',
+        'eslint-plugin-vue@^6.1.2',
+        'sass@^1.25.0',
+        'sass-loader@^8.0.2',
+        'typescript@~3.7.5',
+        'vue-template-compiler@^2.6.11',
     ]
 };
