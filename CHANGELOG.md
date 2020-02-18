@@ -10,6 +10,18 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [2.2.0]
+###### 2020-02-18
+
+###### Added
+
+- feat(plugin): typescript interface creation from json
+
+###### Improved
+
+- chore(vue-cli): add freeze for vue-cli project with version 4.2.2
+- chore: upgrade vue template to 4.2
+
 ## [2.1.2]
 ###### 2020-01-31
 
@@ -130,7 +142,8 @@ Looking for [unreleased] changes?
 
 First version ready for internal testing.
 
-[unreleased]: https://github.com/gridonic/generator/compare/2.1.2...HEAD
+[unreleased]: https://github.com/gridonic/generator/compare/2.2.0...HEAD
+[2.2.0]: https://github.com/gridonic/generator/compare/2.1.2...2.2.0
 [2.1.2]: https://github.com/gridonic/generator/compare/2.1.1...2.1.2
 [2.1.1]: https://github.com/gridonic/generator/compare/2.1.0...2.1.1
 [2.1.0]: https://github.com/gridonic/generator/compare/2.0.4...2.1.0
