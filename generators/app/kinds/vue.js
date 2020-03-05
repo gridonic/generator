@@ -80,62 +80,63 @@ module.exports = {
     ],
     dependencies: [
         // Gridonic Client Services & Components
-        '@gridonic/client-services@^0.2.0',
+        '@gridonic/client-services@^0.3.0',
         '@gridonic/components@^0.2.1',
 
         // Dependencies from Vue-Cli
         'core-js@^3.6.4',
         'register-service-worker@^1.6.2',
         'vue@^2.6.11',
-        'vue-router@^3.1.5',
+        'vue-router@^3.1.6',
         'vuex@^3.1.2',
-        'vue-i18n@^8.15.1'
+        'vue-i18n@^8.15.4'
     ],
     devDependencies: [
         // Gridonic Generator
         `@gridonic/generator`,
 
         // Vue-Cli Version for this template
-        '@vue/cli@^4.2.2',
+        '@vue/cli@^4.2.3',
 
         // Dot-Env, for configuration testing purposes
         'dotenv@^8.2.0',
 
         // Lint-staged, for gitHooks
-        'lint-staged@^9.5.0',
+        'lint-staged@^10.0.8',
 
         // Integrate style linting
         'stylelint@^11.1.1',
         'stylelint-config-standard@^19.0.0',
         'stylelint-order@^3.1.1',
-        'stylelint-scss@^3.13.0',
+        'stylelint-scss@^3.14.2',
 
         // Post Css plugins
         'postcss-lh@^2.0.2',
+        'postcss-normalize@^8.0.1',
         'postcss-replace@^1.1.0',
 
         // Dependencies from Vue-Cli
-        '@types/jest@^24.0.19',
-        '@typescript-eslint/eslint-plugin@^2.18.0',
-        '@typescript-eslint/parser@^2.18.0',
-        '@vue/cli-plugin-babel@~4.2.0',
-        '@vue/cli-plugin-e2e-cypress@~4.2.0',
-        '@vue/cli-plugin-eslint@~4.2.0',
-        '@vue/cli-plugin-pwa@~4.2.0',
-        '@vue/cli-plugin-router@~4.2.0',
-        '@vue/cli-plugin-typescript@~4.2.0',
-        '@vue/cli-plugin-unit-jest@~4.2.0',
-        '@vue/cli-plugin-vuex@~4.2.0',
-        '@vue/cli-service@~4.2.0',
+        '@types/jest@^25.1.3',
+        '@typescript-eslint/eslint-plugin@^2.21.0',
+        '@typescript-eslint/parser@^2.21.0',
+        '@vue/cli-plugin-babel@~4.2.3',
+        '@vue/cli-plugin-e2e-cypress@~4.2.3',
+        '@vue/cli-plugin-eslint@~4.2.3',
+        '@vue/cli-plugin-pwa@~4.2.3',
+        '@vue/cli-plugin-router@~4.2.3',
+        '@vue/cli-plugin-typescript@~4.2.3',
+        '@vue/cli-plugin-unit-jest@~4.2.3',
+        '@vue/cli-plugin-vuex@~4.2.3',
+        '@vue/cli-service@~4.2.3',
         '@vue/eslint-config-airbnb@^5.0.2',
-        '@vue/eslint-config-typescript@^5.0.1',
+        '@vue/eslint-config-typescript@^5.0.2',
         '@vue/test-utils@1.0.0-beta.31',
         'eslint@^6.7.2',
         'eslint-plugin-import@^2.20.1',
         'eslint-plugin-vue@^6.1.2',
-        'sass@^1.25.0',
+        'sass@^1.26.2',
         'sass-loader@^8.0.2',
-        'typescript@~3.7.5',
+        'typescript@~3.8.3',
         'vue-template-compiler@^2.6.11',
     ]
 };

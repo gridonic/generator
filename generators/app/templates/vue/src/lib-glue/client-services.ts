@@ -1,7 +1,6 @@
 // Note: we import the client-services interfaces directly from the source, it is the only way
 // webpack does not emit warnings pretending not to recognize the module import
 import Vue from 'vue';
-import VueI18n from 'vue-i18n';
 
 import { Logger } from '@gridonic/client-services/src/core/logging/Logger';
 import { ErrorTracker } from '@gridonic/client-services/src/tracking/error/ErrorTracker';

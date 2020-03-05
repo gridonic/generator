@@ -9,12 +9,12 @@ import {
 export { Store } from 'vuex';
 
 export interface Dispatch {
-  (type: string, payload?: any, options?: DispatchOptions): Promise<any>;
-  <P extends Payload>(payloadWithType: P, options?: DispatchOptions): Promise<any>;
+  (type: string, payload?: object, options?: DispatchOptions): Promise<object>;
+  <P extends Payload>(payloadWithType: P, options?: DispatchOptions): Promise<object>;
 }
 
 export interface Commit {
-  (type: string, payload?: any, options?: CommitOptions): void;
+  (type: string, payload?: object, options?: CommitOptions): void;
   <P extends Payload>(payloadWithType: P, options?: CommitOptions): void;
 }
 

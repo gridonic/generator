@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 export default class AppInfo {
   public appEnvironment = process.env.VUE_APP_ENVIRONMENT!;
   public appVersion = process.env.VUE_APP_VERSION!;

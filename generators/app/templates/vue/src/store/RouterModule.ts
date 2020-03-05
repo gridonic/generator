@@ -35,7 +35,7 @@ export default class RouterModule implements Module<RouterState> {
     const self = this;
 
     return {
-      async push({ commit }, name: string) {
+      async push(args, name: string) {
         return self.router.push({ name });
       },
     };
