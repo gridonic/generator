@@ -10,6 +10,13 @@ Looking for [unreleased] changes?
 
 <br>
 
+## [2.2.1]
+###### 2020-02-18
+
+###### Improved
+
+- chore: upgrade vue-cli  to 4.2.3 and typescript to 3.8
+
 ## [2.2.0]
 ###### 2020-02-18
 
@@ -142,7 +149,8 @@ Looking for [unreleased] changes?
 
 First version ready for internal testing.
 
-[unreleased]: https://github.com/gridonic/generator/compare/2.2.0...HEAD
+[unreleased]: https://github.com/gridonic/generator/compare/2.2.1...HEAD
+[2.2.0]: https://github.com/gridonic/generator/compare/2.2.0...2.2.1
 [2.2.0]: https://github.com/gridonic/generator/compare/2.1.2...2.2.0
 [2.1.2]: https://github.com/gridonic/generator/compare/2.1.1...2.1.2
 [2.1.1]: https://github.com/gridonic/generator/compare/2.1.0...2.1.1
