@@ -9,6 +9,15 @@ import {
 
 export const namespace = '<%= lowerCaseName %>';
 
+const mutations = {
+};
+
+export const getters = {
+};
+
+export const actions = {
+};
+
 export interface <%= stateName %> {
 }
 
