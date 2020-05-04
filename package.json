@@ -12,7 +12,7 @@
   ],
   "dependencies": {
     "@gridonic/log": "^1.0.0",
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "clipboardy": "^2.1.0",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
